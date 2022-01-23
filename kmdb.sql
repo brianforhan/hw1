@@ -112,9 +112,28 @@ CREATE TABLE top_cast (
   role TEXT
 ); 
 
-INSERT INTO movies (title, year, mpaa_rating, director)
-VALUE (Batman Begins, 2005, PG-13, Christopher Nolan)
-INSERT INTO movies (title, year, mpaa_rating, director)
-VALUE (The Dark Knight, 2008, PG-13, Christopher Nolan)
-INSERT INTO movies (title, year, mpaa_rating, director)
-VALUE (The Dark Knight Rises, 2012, PG-13, Christopher Nolan)
+INSERT INTO movies (
+  title, 
+  year, 
+  mpaa_rating, 
+  director
+  )
+VALUES (
+  "Batman Begins", 
+  2005, 
+  "PG-13", 
+  "Christopher Nolan"
+  ),
+(
+  "The Dark Knight", 
+  2008, 
+  "PG-13", 
+  "Christopher Nolan"
+  ),
+ (
+  "The Dark Knight Rises", 
+  2012, 
+  "PG-13", 
+  "Christopher Nolan"
+  );
+
