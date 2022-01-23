@@ -96,6 +96,7 @@
 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS top_cast;
+DROP TABLE IF EXISTS director;
 
 CREATE TABLE movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -110,6 +111,14 @@ CREATE TABLE top_cast (
   title TEXT,
   name TEXT,
   role TEXT
+  movies_id
+  director_id
+); 
+
+CREATE TABLE director (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  first_name TEXT,
+  last_name TEXT
 ); 
 
 INSERT INTO movies (
@@ -158,3 +167,12 @@ VALUES (
 ("The Dark Knight Rises", "Tom Hardy", "Bane"),
 ("The Dark Knight Rises", "Joseph Gordon-Levitt", "John Blake"),
 ("The Dark Knight Rises", "Anne Hathaway", "Selina Kyle");
+
+INSERT INTO director (
+  first_name, 
+  last_name
+)
+VALUES (
+  "Christopher",
+  "Nolan"
+); 
