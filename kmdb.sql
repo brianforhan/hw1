@@ -95,15 +95,13 @@ GROUP BY movies.title;
 .print "========"
 .print ""
 
+-- The SQL statement for the cast output
+-- TODO!
+
 SELECT movies.title, top_cast.name, top_cast.role
 FROM top_cast
 INNER JOIN movies ON movies_id = top_cast.movies_id
-GROUP BY top_cast.name
-ORDER BY movies.title;
-
-
--- The SQL statement for the cast output
--- TODO!
+ORDER BY top_cast.name;
 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS top_cast;
@@ -121,8 +119,7 @@ CREATE TABLE top_cast (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   role TEXT,
-  movies_id INTEGER,
-  director_id INTEGER
+  movies_id INTEGER
 ); 
 
 CREATE TABLE director (
@@ -158,25 +155,24 @@ VALUES (
 INSERT INTO top_cast (
   name,
   role,
-  movies_id,
-  director_id
+  movies_id
 )
 VALUES (
-"Christian Bale", "Bruce Wayne",1,1),
-("Michael Caine", "Alfred",1,1),
-("Liam Neeson", "Ra's Al Ghul",1,1),
-("Katie Holmes", "Rachel Dawes",1,1),
-("Gary Oldman", "Commissioner Gordon",1,1),
-("Christian Bale", "Bruce Wayne",2,1),
-("Heath Ledger", "Joker",2,1),
-("Aaron Eckhart", "Harvey Dent",2,1),
-("Michael Caine", "Alfred",2,1),
-("Maggie Gyllenhaal", "Rachel Dawes",2,1),
-("Christian Bale", "Bruce Wayne",3,1),
-("Gary Oldman", "Commissioner Gordon",3,1),
-("Tom Hardy", "Bane",3,1),
-("Joseph Gordon-Levitt", "John Blake",3,1),
-("Anne Hathaway", "Selina Kyle",3,1);
+"Christian Bale", "Bruce Wayne",1),
+("Michael Caine", "Alfred",1),
+("Liam Neeson", "Ra's Al Ghul",1),
+("Katie Holmes", "Rachel Dawes",1),
+("Gary Oldman", "Commissioner Gordon",1),
+("Christian Bale", "Bruce Wayne",2),
+("Heath Ledger", "Joker",2),
+("Aaron Eckhart", "Harvey Dent",2),
+("Michael Caine", "Alfred",2),
+("Maggie Gyllenhaal", "Rachel Dawes",2),
+("Christian Bale", "Bruce Wayne",3),
+("Gary Oldman", "Commissioner Gordon",3),
+("Tom Hardy", "Bane",3),
+("Joseph Gordon-Levitt", "John Blake",3),
+("Anne Hathaway", "Selina Kyle",3);
 
 INSERT INTO director (
   name 
