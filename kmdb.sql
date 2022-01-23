@@ -84,11 +84,22 @@
 -- The SQL statement for the movies output
 -- TODO!
 
+SELECT movies.title, movies.year, movies.mpaa_rating, director.name
+FROM movies 
+INNER JOIN director ON director.id = movies.director_id
+GROUP BY movies.title;
+
 -- Prints a header for the cast output
 .print ""
 .print "Top Cast"
 .print "========"
 .print ""
+
+SELECT movies.title, top_cast.name, top_cast.role
+FROM top_cast
+INNER JOIN movies ON movies_id = top_cast.movies_id
+GROUP BY top_cast.name
+ORDER BY movies.title;
 
 
 -- The SQL statement for the cast output
@@ -174,7 +185,3 @@ VALUES (
   "Christopher Nolan"
 ); 
 
-SELECT movies.title, movies.year, movies.mpaa_rating, director.name,
-FROM movies 
-INNER JOIN director ON director.id = movies.director_id
-GROUP BY movies.title;
