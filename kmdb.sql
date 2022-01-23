@@ -169,7 +169,7 @@ VALUES (
 ("Aaron Eckhart", "Harvey Dent",2),
 ("Maggie Gyllenhaal", "Rachel Dawes",2),
 ("Tom Hardy", "Bane",3),
-("Joseph Gordon-Levitt", "John Blake",3)
+("Joseph Gordon-Levitt", "John Blake",3),
 ("Anne Hathaway", "Selina Kyle",3);
 
 INSERT INTO director (
