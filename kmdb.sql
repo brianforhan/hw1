@@ -100,8 +100,8 @@ GROUP BY movies.title;
 
 SELECT movies.title, top_cast.name, top_cast.role
 FROM top_cast
-INNER JOIN movies ON movies_id = top_cast.movies_id
-ORDER BY top_cast.name;
+INNER JOIN movies ON movies.id = top_cast.movies_id
+GROUP BY movies.id;
 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS top_cast;
@@ -130,48 +130,46 @@ CREATE TABLE director (
 INSERT INTO movies (
   title, 
   year, 
-  mpaa_rating, 
-  director_id
+  mpaa_rating 
   )
 VALUES (
   "Batman Begins", 
   2005, 
-  "PG-13", 
-  1
+  "PG-13"
   ),
 (
   "The Dark Knight", 
   2008, 
-  "PG-13", 
-  1
+  "PG-13"
   ),
  (
   "The Dark Knight Rises", 
   2012, 
-  "PG-13", 
-  1
+  "PG-13"
   );
 
 INSERT INTO top_cast (
-  name,
-  role,
-  movies_id
-)
+  name, 
+  role, 
+  movies_id 
+  )
 VALUES (
 "Christian Bale", "Bruce Wayne",1),
-("Michael Caine", "Alfred",1),
-("Liam Neeson", "Ra's Al Ghul",1),
-("Katie Holmes", "Rachel Dawes",1),
-("Gary Oldman", "Commissioner Gordon",1),
 ("Christian Bale", "Bruce Wayne",2),
+("Christian Bale", "Bruce Wayne",3),
+("Michael Caine", "Alfred",1),
+("Michael Caine", "Alfred",2),
+("Michael Caine", "Alfred",3),
+("Liam Neeson", "Ra's Al Ghul"),
+("Katie Holmes", "Rachel Dawes"),
+("Gary Oldman", "Commissioner Gordon",1),
+("Gary Oldman", "Commissioner Gordon",2),
+("Gary Oldman", "Commissioner Gordon",3),
 ("Heath Ledger", "Joker",2),
 ("Aaron Eckhart", "Harvey Dent",2),
-("Michael Caine", "Alfred",2),
 ("Maggie Gyllenhaal", "Rachel Dawes",2),
-("Christian Bale", "Bruce Wayne",3),
-("Gary Oldman", "Commissioner Gordon",3),
 ("Tom Hardy", "Bane",3),
-("Joseph Gordon-Levitt", "John Blake",3),
+("Joseph Gordon-Levitt", "John Blake",3)
 ("Anne Hathaway", "Selina Kyle",3);
 
 INSERT INTO director (
