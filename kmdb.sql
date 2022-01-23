@@ -143,7 +143,7 @@ INSERT INTO top_cast (
   role
 )
 VALUES (
-"Batman Begins", "Christian Bale", "Bruce Wayne" ),
+"Batman Begins", "Christian Bale", "Bruce Wayne"),
 ("Batman Begins", "Michael Caine", "Alfred"),
 ("Batman Begins", "Liam Neeson", "Ra's Al Ghul"),
 ("Batman Begins", "Katie Holmes", "Rachel Dawes"),
