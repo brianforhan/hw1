@@ -100,8 +100,7 @@ GROUP BY movies.title;
 
 SELECT movies.title, top_cast.name, top_cast.role
 FROM top_cast
-INNER JOIN movies ON movies.id = top_cast.movies_id
-GROUP BY movies.id;
+INNER JOIN movies ON movies.id = top_cast.movies_id;
 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS top_cast;
