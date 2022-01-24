@@ -69,43 +69,12 @@
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
 
--- Create new tables, according to your domain model
--- TODO!
-
--- Insert data into your database that reflects the sample data shown above
--- Use hard-coded foreign key IDs when necessary
--- TODO!
-
--- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
-
--- The SQL statement for the movies output
--- TODO!
-
-SELECT movies.title, movies.year, movies.mpaa_rating, director.name
-FROM movies 
-INNER JOIN director ON director.id = movies.director_id
-GROUP BY movies.title;
-
--- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
-
--- The SQL statement for the cast output
--- TODO!
-
-SELECT movies.title, top_cast.name, top_cast.role
-FROM top_cast
-INNER JOIN movies ON movies.id = top_cast.movies_id
-ORDER BY movies.id;
-
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS top_cast;
 DROP TABLE IF EXISTS director;
+
+-- Create new tables, according to your domain model
+-- TODO!
 
 CREATE TABLE movies (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -127,25 +96,33 @@ CREATE TABLE director (
   name TEXT
 ); 
 
+-- Insert data into your database that reflects the sample data shown above
+-- Use hard-coded foreign key IDs when necessary
+-- TODO!
+
 INSERT INTO movies (
   title, 
   year, 
-  mpaa_rating 
+  mpaa_rating,
+  director_id 
   )
 VALUES (
   "Batman Begins", 
   2005, 
-  "PG-13"
+  "PG-13",
+  1
   ),
 (
   "The Dark Knight", 
   2008, 
-  "PG-13"
+  "PG-13",
+  1
   ),
  (
   "The Dark Knight Rises", 
   2012, 
-  "PG-13"
+  "PG-13",
+  1
   );
 
 INSERT INTO top_cast (
@@ -177,5 +154,31 @@ INSERT INTO director (
 )
 VALUES (
   "Christopher Nolan"
-); 
+);
 
+-- Prints a header for the movies output
+.print "Movies"
+.print "======"
+.print ""
+
+-- The SQL statement for the movies output
+-- TODO!
+
+SELECT movies.title, movies.year, movies.mpaa_rating, director.name
+FROM movies 
+INNER JOIN director ON director.id = movies.director_id
+GROUP BY movies.title;
+
+-- Prints a header for the cast output
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
+
+-- The SQL statement for the cast output
+-- TODO!
+
+SELECT movies.title, top_cast.name, top_cast.role
+FROM top_cast
+INNER JOIN movies ON movies.id = top_cast.movies_id
+ORDER BY movies.id;
